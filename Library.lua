@@ -648,8 +648,7 @@ function Library:Window(name,keybind)
             Color.Parent = Slider
             Color.BackgroundColor3 = Color3.fromRGB(168, 9, 247)
             Color.Position = UDim2.new(0.03, 0, 0.681663752, 0)
-            Color.Size = UDim2.new(0, 34, 0, 9)
-            
+            Color.Size = UDim2.new((start or 0) / max, 0, 0, 9)
         
             local UICorner_13 = Instance.new("UICorner")
             UICorner_13.Parent = Color
@@ -684,7 +683,7 @@ function Library:Window(name,keybind)
             TextLabel_3.Position = UDim2.new(0.675912857, 0, 0.0526315011, 0)
             TextLabel_3.Size = UDim2.new(0, 77, 0, 33)
             TextLabel_3.Font = Enum.Font.FredokaOne
-            TextLabel_3.Text = "("..start..")"
+            TextLabel_3.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
             TextLabel_3.TextColor3 = Color3.fromRGB(140, 140, 140)
             TextLabel_3.TextSize = 17.000
             TextLabel_3.TextXAlignment = Enum.TextXAlignment.Right
@@ -763,4 +762,3 @@ function Library:Window(name,keybind)
 	end
 	return tabs
 end
-return Library
