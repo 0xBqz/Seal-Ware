@@ -762,3 +762,4 @@ function Library:Window(name,keybind)
 	end
 	return tabs
 end
+return Library
