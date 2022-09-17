@@ -1,5 +1,5 @@
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/0xBqz/Seal-Ware/main/Scripts/Library.lua", true))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/0xBqz/Seal-Ware/main/Library.lua", true))()
 local Gui = Library:Window("Title")
 
 local Main = Gui:tab("Tab")
