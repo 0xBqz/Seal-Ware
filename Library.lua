@@ -51,8 +51,12 @@ local function drag(Frame, dragSpeed)
 	end)
 end
 
-function Library:Window(name,keybind)
+function Library:Window(name,keybind,theme,title1,title2)
     local Bind = keybind or Enum.KeyCode.RightControl
+    local Theme = theme or Color3.fromRGB(168, 9, 247)
+    local Title1 = title1 or "Seal"
+    local Title2 = title2 or "Ware"
+
     local Frame = Instance.new("Frame")
 	local Frame_2 = Instance.new("Frame")
 	local Shade = Instance.new("Frame")
@@ -67,24 +71,7 @@ function Library:Window(name,keybind)
     local UICorner_3 = Instance.new("UICorner")
     local UIGradient = Instance.new("UIGradient")
     local UIListLayout = Instance.new("UIListLayout")
-    local TextButton = Instance.new("TextButton")
     local Scrolls = Instance.new("Folder")
-    local UICorner_5 = Instance.new("UICorner")
-    local brightness_1_2 = Instance.new("ImageButton")
-    local Accion = Instance.new("Frame")
-    local UICorner_6 = Instance.new("UICorner")
-    local Circle = Instance.new("Frame")
-    local UICorner_7 = Instance.new("UICorner")
-    local UIGradient_3 = Instance.new("UIGradient")
-    local Toggleoff = Instance.new("TextButton")
-    local UICorner_8 = Instance.new("UICorner")
-    local Title_3 = Instance.new("TextLabel")
-    local brightness_1_3 = Instance.new("ImageButton")
-    local Action = Instance.new("Frame")
-    local UICorner_9 = Instance.new("UICorner")
-    local Circle_2 = Instance.new("Frame")
-    local UICorner_10 = Instance.new("UICorner")
-    local UIGradient_4 = Instance.new("UIGradient")
     local GameTitle = Instance.new("TextLabel")
     local fs = false
 
@@ -128,7 +115,7 @@ function Library:Window(name,keybind)
     Seal.Position = UDim2.new(0.00246305414, 0, 0.000486744568, 0)
     Seal.Size = UDim2.new(0, 125, 0, 30)
     Seal.Font = Enum.Font.FredokaOne
-    Seal.Text = "Seal"
+    Seal.Text = Title1
     Seal.TextColor3 = Color3.fromRGB(247, 247, 247)
     Seal.TextSize = 34.000
 
@@ -139,8 +126,8 @@ function Library:Window(name,keybind)
     Ware.Position = UDim2.new(-0.00492610876, 0, 0.0948263705, 0)
     Ware.Size = UDim2.new(0, 131, 0, 20)
     Ware.Font = Enum.Font.FredokaOne
-    Ware.Text = "Ware"
-    Ware.TextColor3 = Color3.fromRGB(168, 9, 247)
+    Ware.Text = Title2
+    Ware.TextColor3 = Theme
     Ware.TextSize = 25.000
 
     Bar.Name = "Bar"
@@ -222,7 +209,7 @@ function Library:Window(name,keybind)
 		local TextButton_2 = Instance.new("TextButton")
 		TextButton_2.Parent = Sections
         TextButton_2.Name = "Tab"
-		TextButton_2.BackgroundColor3 = Color3.fromRGB(168, 9, 247)
+		TextButton_2.BackgroundColor3 = Theme
 		TextButton_2.BackgroundTransparency = 1.000
 		TextButton_2.BorderSizePixel = 0
 		TextButton_2.Position = UDim2.new(-0.0160000008, 0, 0.113137171, 0)
@@ -443,7 +430,7 @@ function Library:Window(name,keybind)
             local Toggle = default or false
 
             if default then
-                Accion.BackgroundColor3 = Color3.fromRGB(168, 9, 247)
+                Accion.BackgroundColor3 = Theme
                 Circle.Position = UDim2.new(0.550000012, 0, 0, 0)
             end
 
@@ -470,7 +457,7 @@ function Library:Window(name,keybind)
                 pcall(funct, Toggle)
                 if Toggle then
                     TweenService:Create(Accion,TweenInfo.new(.6),{
-                        BackgroundColor3 = Color3.fromRGB(168, 9, 247)
+                        BackgroundColor3 = Theme
                     }):Play()
                     TweenService:Create(Circle,TweenInfo.new(.6),{
                         Position = UDim2.new(0.550000012, 0, 0, 0)
@@ -646,9 +633,9 @@ function Library:Window(name,keybind)
             local Color = Instance.new("Frame")
             Color.Name = "Color"
             Color.Parent = Slider
-            Color.BackgroundColor3 = Color3.fromRGB(168, 9, 247)
+            Color.BackgroundColor3 = Theme
             Color.Position = UDim2.new(0.03, 0, 0.681663752, 0)
-            Color.Size = UDim2.new((start or 0) / max, 0, 0, 9)
+            Color.Size = UDim2.new((start or 0) / max, 0, 0, 3)
         
             local UICorner_13 = Instance.new("UICorner")
             UICorner_13.Parent = Color
@@ -683,7 +670,7 @@ function Library:Window(name,keybind)
             TextLabel_3.Position = UDim2.new(0.675912857, 0, 0.0526315011, 0)
             TextLabel_3.Size = UDim2.new(0, 77, 0, 33)
             TextLabel_3.Font = Enum.Font.FredokaOne
-            TextLabel_3.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
+            TextLabel_3.Text = "("..tostring(start and math.floor((start / max) * (max - min) + min) or 0)..")"
             TextLabel_3.TextColor3 = Color3.fromRGB(140, 140, 140)
             TextLabel_3.TextSize = 17.000
             TextLabel_3.TextXAlignment = Enum.TextXAlignment.Right
