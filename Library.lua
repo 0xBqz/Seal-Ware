@@ -635,7 +635,7 @@ function Library:Window(name,keybind,theme,title1,title2)
             Color.Parent = Slider
             Color.BackgroundColor3 = Theme
             Color.Position = UDim2.new(0.03, 0, 0.681663752, 0)
-            Color.Size = UDim2.new((start or 0) / max, 0, 0, 3)
+            Color.Size = UDim2.new((start or 0) / max, 0, 0, 9)
         
             local UICorner_13 = Instance.new("UICorner")
             UICorner_13.Parent = Color
@@ -681,7 +681,7 @@ function Library:Window(name,keybind,theme,title1,title2)
                         math.clamp((input.Position.X - Gray.AbsolutePosition.X) / Gray.AbsoluteSize.X, 0, 1),
                         -6,
                     -1.30499995,
-                        0
+                        9
                     )
                 local pos1 =
                     UDim2.new(
